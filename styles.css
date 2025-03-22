@@ -1,7 +1,7 @@
 /* Google Material Icons */
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* Google Fonts - Playful fonts for children */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* Reset and Base Styles */
 * {
@@ -11,10 +11,11 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Comic Neue', cursive;
     line-height: 1.6;
     color: #333;
-    background-color: #f9f9f9;
+    background-color: #f0f9ff;
+    background-image: url('https://www.transparenttextures.com/patterns/diagonales-decalees.png');
 }
 
 a {
@@ -34,7 +35,7 @@ img {
 
 button {
     cursor: pointer;
-    font-family: inherit;
+    font-family: 'Fredoka One', cursive;
 }
 
 /* Header Styles */
@@ -43,17 +44,21 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 5%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ff9800;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 5px solid #e65100;
 }
 
 .logo h1 {
-    color: #4CAF50;
-    font-size: 1.8rem;
+    color: #ffffff;
+    font-size: 2.2rem;
     font-weight: 700;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 2px 2px 0 #e65100, 4px 4px 0 rgba(0,0,0,0.1);
+    letter-spacing: 1px;
 }
 
 nav ul {
@@ -62,12 +67,31 @@ nav ul {
 }
 
 nav ul li a {
-    font-weight: 500;
-    transition: color 0.3s;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s;
 }
 
 nav ul li a:hover {
-    color: #4CAF50;
+    color: #fff;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
 }
 
 .cart-icon {
@@ -75,104 +99,175 @@ nav ul li a:hover {
     align-items: center;
     cursor: pointer;
     position: relative;
+    background-color: #e65100;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
 }
 
 .material-icons {
     font-size: 1.8rem;
-    color: #4CAF50;
+    color: #ffffff;
 }
 
 .cart-count {
     position: absolute;
     top: -8px;
     right: -8px;
-    background-color: #ff5722;
+    background-color: #4CAF50;
     color: white;
-    font-size: 0.7rem;
-    width: 18px;
-    height: 18px;
+    font-size: 0.8rem;
+    width: 22px;
+    height: 22px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
+    border: 2px solid white;
 }
 
 /* Hero Section */
 .hero {
     height: 80vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://via.placeholder.com/1920x1080?text=Dinosaur+Toys+Banner');
+    background-image: url('https://images.unsplash.com/photo-1569599970698-25a949bfc06c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,152,0,0.8) 0%, rgba(230,81,0,0.8) 100%);
 }
 
 .hero-content {
     max-width: 800px;
-    padding: 0 2rem;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    border: 5px solid #ff9800;
 }
 
 .hero h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 1rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 2px 2px 0 #e65100;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
 }
 
 .cta-button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
-    font-size: 1.1rem;
-    border-radius: 30px;
-    transition: background-color 0.3s;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+    top: 0;
 }
 
 .cta-button:hover {
     background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.2);
+    top: 2px;
 }
 
 /* Products Section */
 .products {
     padding: 5rem 5%;
+    background-color: #fff;
+    position: relative;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f0f9ff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
 }
 
 .products h2 {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.products h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
 }
 
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .product-card {
     background-color: white;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    border: 3px solid #ff9800;
+    position: relative;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-15px) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .product-image {
-    height: 200px;
+    height: 250px;
     overflow: hidden;
+    border-bottom: 3px solid #ff9800;
 }
 
 .product-image img {
@@ -188,73 +283,179 @@ nav ul li a:hover {
 
 .product-info {
     padding: 1.5rem;
+    position: relative;
+}
+
+.product-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
 }
 
 .product-info h3 {
     margin-bottom: 0.5rem;
-    color: #333;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
 }
 
 .product-description {
-    color: #666;
+    color: #555;
     margin-bottom: 1rem;
-    font-size: 0.9rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .product-price {
-    font-weight: 600;
+    font-weight: 700;
     color: #4CAF50;
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     margin-bottom: 1rem;
+    font-family: 'Fredoka One', cursive;
 }
 
 .add-to-cart {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 0.6rem 1.2rem;
-    border-radius: 5px;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #388E3C, 0 8px 15px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    width: 100%;
+    font-size: 1.1rem;
 }
 
 .add-to-cart:hover {
     background-color: #388E3C;
+    box-shadow: 0 2px 0 #2E7D32, 0 4px 8px rgba(0,0,0,0.1);
+    top: 2px;
 }
 
 /* About Section */
 .about {
     padding: 5rem 5%;
-    background-color: #f1f8e9;
+    background-color: #f0f9ff;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
 }
 
 .about h2 {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.about-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+    border-radius: 17px;
 }
 
 .about-text p {
     margin-bottom: 1.5rem;
     text-align: center;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
 }
 
 /* Contact Section */
 .contact {
     padding: 5rem 5%;
+    background-color: #fff;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f0f9ff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
 }
 
 .contact h2 {
     text-align: center;
     margin-bottom: 3rem;
-    font-size: 2rem;
-    color: #333;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
 }
 
 .contact-form {
@@ -262,49 +463,76 @@ nav ul li a:hover {
     margin: 0 auto;
     background-color: white;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+    border-radius: 17px;
 }
 
 .form-group {
     margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .form-group label {
     display: block;
     margin-bottom: 0.5rem;
-    font-weight: 500;
+    font-weight: 700;
+    color: #ff9800;
+    font-size: 1.1rem;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: inherit;
+    padding: 1rem;
+    border: 2px solid #ff9800;
+    border-radius: 10px;
+    font-family: 'Comic Neue', cursive;
     font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
 }
 
 .submit-button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 0.8rem 2rem;
-    font-size: 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s;
     width: 100%;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 1;
 }
 
 .submit-button:hover {
     background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.1);
+    top: 2px;
 }
 
 /* Cart Modal */
@@ -315,7 +543,7 @@ nav ul li a:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
     justify-content: center;
     align-items: center;
@@ -325,39 +553,57 @@ nav ul li a:hover {
     background-color: white;
     width: 90%;
     max-width: 600px;
-    border-radius: 10px;
+    border-radius: 20px;
     overflow: hidden;
     max-height: 80vh;
     display: flex;
     flex-direction: column;
+    border: 5px solid #ff9800;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
 .cart-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 1.5rem;
-    background-color: #4CAF50;
+    padding: 1.2rem 1.5rem;
+    background-color: #ff9800;
     color: white;
 }
 
+.cart-header h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 0 #e65100;
+}
+
 .close-cart {
-    font-size: 1.8rem;
+    font-size: 2rem;
     cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-cart:hover {
+    transform: rotate(90deg);
 }
 
 .cart-items {
     padding: 1.5rem;
     overflow-y: auto;
     flex-grow: 1;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
 }
 
 .cart-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0;
-    border-bottom: 1px solid #eee;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #ff9800;
 }
 
 .cart-item-info {
@@ -367,69 +613,113 @@ nav ul li a:hover {
 }
 
 .cart-item-image {
-    width: 60px;
-    height: 60px;
-    border-radius: 5px;
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
     overflow: hidden;
+    border: 2px solid #ff9800;
 }
 
 .cart-item-details h4 {
     margin-bottom: 0.2rem;
+    font-family: 'Fredoka One', cursive;
+    color: #ff9800;
 }
 
 .cart-item-price {
     color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 .cart-item-quantity {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.8rem;
 }
 
 .quantity-btn {
-    background-color: #eee;
+    background-color: #ff9800;
+    color: white;
     border: none;
-    width: 25px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    box-shadow: 0 3px 0 #e65100, 0 6px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+}
+
+.quantity-btn:hover {
+    background-color: #e65100;
+    box-shadow: 0 1px 0 #bf360c, 0 3px 5px rgba(0,0,0,0.1);
+    top: 2px;
 }
 
 .remove-item {
-    color: #ff5722;
+    color: #f44336;
     cursor: pointer;
+    font-size: 1.3rem;
+    transition: transform 0.3s;
+}
+
+.remove-item:hover {
+    transform: scale(1.2);
 }
 
 .cart-total {
-    padding: 1rem 1.5rem;
-    border-top: 1px solid #eee;
-    font-weight: 600;
-    font-size: 1.1rem;
+    padding: 1.5rem;
+    border-top: 3px solid #ff9800;
+    font-weight: 700;
+    font-size: 1.3rem;
+    background-color: #fff9c4;
+    font-family: 'Fredoka One', cursive;
+    color: #ff9800;
 }
 
 .checkout-button {
     background-color: #4CAF50;
     color: white;
     border: none;
-    padding: 1rem;
-    font-size: 1rem;
+    padding: 1.2rem;
+    font-size: 1.2rem;
     font-weight: 500;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
 }
 
 .checkout-button:hover {
     background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.1);
+    top: 2px;
 }
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #ff9800;
     color: white;
     padding-top: 3rem;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
 }
 
 .footer-content {
@@ -440,32 +730,99 @@ footer {
 }
 
 .footer-logo h2 {
-    color: #4CAF50;
+    color: #ffffff;
     margin-bottom: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0 #e65100;
+}
+
+.footer-logo p {
+    font-weight: bold;
 }
 
 .footer-links h3,
 .footer-contact h3 {
     margin-bottom: 1rem;
-    color: #4CAF50;
+    color: #ffffff;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
 }
 
 .footer-links ul li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.footer-links ul li a {
+    transition: all 0.3s;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links ul li a::before {
+    content: '🦖';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s;
 }
 
 .footer-links ul li a:hover {
-    color: #4CAF50;
+    color: #fff;
+    padding-left: 25px;
+}
+
+.footer-links ul li a:hover::before {
+    opacity: 1;
 }
 
 .footer-contact p {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    font-weight: bold;
 }
 
 .footer-bottom {
-    background-color: #222;
+    background-color: #e65100;
     padding: 1.5rem 0;
     text-align: center;
+    font-weight: bold;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: bottom 0.3s ease-in-out;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    border: 3px solid white;
+}
+
+.notification.show {
+    bottom: 20px;
+}
+
+/* Dinosaur Footprints */
+.dino-footprints {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="60" height="30" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M10,10 C12,5 15,5 15,10 C15,15 10,20 5,15 C0,10 5,5 10,10 Z" fill="%23e65100" opacity="0.3" transform="rotate(30)"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 60px 30px;
 }
 
 /* Responsive Styles */
@@ -515,3 +872,1745 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* Google Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* Google Fonts - Playful fonts for children */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f9ff;
+    background-image: url('https://www.transparenttextures.com/patterns/diagonales-decalees.png');
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ff9800;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 5px solid #e65100;
+}
+
+.logo h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 2px 2px 0 #e65100, 4px 4px 0 rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-color: #e65100;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.material-icons {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.8rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background-image: url('https://images.unsplash.com/photo-1569599970698-25a949bfc06c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,152,0,0.8) 0%, rgba(230,81,0,0.8) 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    border: 5px solid #ff9800;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 2px 2px 0 #e65100;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+    top: 0;
+}
+
+.cta-button:hover {
+    background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.2);
+    top: 2px;
+}
+
+/* Products Section */
+.products {
+    padding: 5rem 5%;
+    background-color: #fff;
+    position: relative;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f0f9ff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.products h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-15px) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 3px solid #ff9800;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.product-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+}
+
+.product-info h3 {
+    margin-bottom: 0.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+}
+
+.product-description {
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Fredoka One', cursive;
+}
+
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #388E3C, 0 8px 15px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.add-to-cart:hover {
+    background-color: #388E3C;
+    box-shadow: 0 2px 0 #2E7D32, 0 4px 8px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 5%;
+    background-color: #f0f9ff;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.about-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+    border-radius: 17px;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 5%;
+    background-color: #fff;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f0f9ff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+    border-radius: 17px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #ff9800;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ff9800;
+    border-radius: 10px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+    width: 100%;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+.submit-button:hover {
+    background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+/* Cart Modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #ff9800;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background-color: #ff9800;
+    color: white;
+}
+
+.cart-header h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 0 #e65100;
+}
+
+.close-cart {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-cart:hover {
+    transform: rotate(90deg);
+}
+
+.cart-items {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #ff9800;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-item-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ff9800;
+}
+
+.cart-item-details h4 {
+    margin-bottom: 0.2rem;
+    font-family: 'Fredoka One', cursive;
+    color: #ff9800;
+}
+
+.cart-item-price {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.quantity-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    box-shadow: 0 3px 0 #e65100, 0 6px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+}
+
+.quantity-btn:hover {
+    background-color: #e65100;
+    box-shadow: 0 1px 0 #bf360c, 0 3px 5px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+.remove-item {
+    color: #f44336;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: transform 0.3s;
+}
+
+.remove-item:hover {
+    transform: scale(1.2);
+}
+
+.cart-total {
+    padding: 1.5rem;
+    border-top: 3px solid #ff9800;
+    font-weight: 700;
+    font-size: 1.3rem;
+    background-color: #fff9c4;
+    font-family: 'Fredoka One', cursive;
+    color: #ff9800;
+}
+
+.checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+}
+
+.checkout-button:hover {
+    background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+/* Footer */
+footer {
+    background-color: #ff9800;
+    color: white;
+    padding-top: 3rem;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 5% 3rem;
+}
+
+.footer-logo h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0 #e65100;
+}
+
+.footer-logo p {
+    font-weight: bold;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.footer-links ul li a {
+    transition: all 0.3s;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links ul li a::before {
+    content: '🦖';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+    padding-left: 25px;
+}
+
+.footer-links ul li a:hover::before {
+    opacity: 1;
+}
+
+.footer-contact p {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    background-color: #e65100;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: bottom 0.3s ease-in-out;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    border: 3px solid white;
+}
+
+.notification.show {
+    bottom: 20px;
+}
+
+/* Dinosaur Footprints */
+.dino-footprints {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="60" height="30" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M10,10 C12,5 15,5 15,10 C15,15 10,20 5,15 C0,10 5,5 10,10 Z" fill="%23e65100" opacity="0.3" transform="rotate(30)"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 60px 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+/* Google Material Icons */
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+/* Google Fonts - Playful fonts for children */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Comic+Neue:wght@400;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Neue', cursive;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f0f9ff;
+    background-image: url('https://www.transparenttextures.com/patterns/diagonales-decalees.png');
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    font-family: 'Fredoka One', cursive;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: #ff9800;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 5px solid #e65100;
+}
+
+.logo h1 {
+    color: #ffffff;
+    font-size: 2.2rem;
+    font-weight: 700;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 2px 2px 0 #e65100, 4px 4px 0 rgba(0,0,0,0.1);
+    letter-spacing: 1px;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    font-weight: 700;
+    color: #fff;
+    font-size: 1.1rem;
+    transition: all 0.3s;
+    position: relative;
+    padding: 5px 0;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: #fff;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    background-color: #e65100;
+    padding: 10px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
+}
+
+.cart-icon:hover {
+    transform: scale(1.1);
+}
+
+.material-icons {
+    font-size: 1.8rem;
+    color: #ffffff;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 0.8rem;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border: 2px solid white;
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background-image: url('https://images.unsplash.com/photo-1569599970698-25a949bfc06c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,152,0,0.8) 0%, rgba(230,81,0,0.8) 100%);
+}
+
+.hero-content {
+    max-width: 800px;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+    border: 5px solid #ff9800;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 2px 2px 0 #e65100;
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.cta-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.3rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.2);
+    position: relative;
+    top: 0;
+}
+
+.cta-button:hover {
+    background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.2);
+    top: 2px;
+}
+
+/* Products Section */
+.products {
+    padding: 5rem 5%;
+    background-color: #fff;
+    position: relative;
+}
+
+.products::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f0f9ff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.products h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.products h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.product-card:hover {
+    transform: translateY(-15px) rotate(2deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.product-image {
+    height: 250px;
+    overflow: hidden;
+    border-bottom: 3px solid #ff9800;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.product-card:hover .product-image img {
+    transform: scale(1.1);
+}
+
+.product-info {
+    padding: 1.5rem;
+    position: relative;
+}
+
+.product-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+}
+
+.product-info h3 {
+    margin-bottom: 0.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+}
+
+.product-description {
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.product-price {
+    font-weight: 700;
+    color: #4CAF50;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: 'Fredoka One', cursive;
+}
+
+.add-to-cart {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 4px 0 #388E3C, 0 8px 15px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.add-to-cart:hover {
+    background-color: #388E3C;
+    box-shadow: 0 2px 0 #2E7D32, 0 4px 8px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+/* About Section */
+.about {
+    padding: 5rem 5%;
+    background-color: #f0f9ff;
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.about-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+    border-radius: 17px;
+}
+
+.about-text p {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    position: relative;
+    z-index: 1;
+    font-weight: bold;
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 5%;
+    background-color: #fff;
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23f0f9ff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #ff9800;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: #ff9800;
+    border-radius: 10px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    border: 3px solid #ff9800;
+    position: relative;
+}
+
+.contact-form::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+    opacity: 0.5;
+    border-radius: 17px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    color: #ff9800;
+    font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #ff9800;
+    border-radius: 10px;
+    font-family: 'Comic Neue', cursive;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    transition: all 0.3s;
+    width: 100%;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+    z-index: 1;
+}
+
+.submit-button:hover {
+    background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+/* Cart Modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-content {
+    background-color: white;
+    width: 90%;
+    max-width: 600px;
+    border-radius: 20px;
+    overflow: hidden;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #ff9800;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    background-color: #ff9800;
+    color: white;
+}
+
+.cart-header h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 0 #e65100;
+}
+
+.close-cart {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.close-cart:hover {
+    transform: rotate(90deg);
+}
+
+.cart-items {
+    padding: 1.5rem;
+    overflow-y: auto;
+    flex-grow: 1;
+    background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g fill="%23ff9800" fill-opacity="0.1"><circle cx="3" cy="3" r="1"/><circle cx="13" cy="13" r="1"/></g></svg>');
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 2px solid #ff9800;
+}
+
+.cart-item-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.cart-item-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid #ff9800;
+}
+
+.cart-item-details h4 {
+    margin-bottom: 0.2rem;
+    font-family: 'Fredoka One', cursive;
+    color: #ff9800;
+}
+
+.cart-item-price {
+    color: #4CAF50;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.quantity-btn {
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+    box-shadow: 0 3px 0 #e65100, 0 6px 10px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+}
+
+.quantity-btn:hover {
+    background-color: #e65100;
+    box-shadow: 0 1px 0 #bf360c, 0 3px 5px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+.remove-item {
+    color: #f44336;
+    cursor: pointer;
+    font-size: 1.3rem;
+    transition: transform 0.3s;
+}
+
+.remove-item:hover {
+    transform: scale(1.2);
+}
+
+.cart-total {
+    padding: 1.5rem;
+    border-top: 3px solid #ff9800;
+    font-weight: 700;
+    font-size: 1.3rem;
+    background-color: #fff9c4;
+    font-family: 'Fredoka One', cursive;
+    color: #ff9800;
+}
+
+.checkout-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 1.2rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    box-shadow: 0 5px 0 #388E3C, 0 10px 20px rgba(0,0,0,0.1);
+    position: relative;
+    top: 0;
+}
+
+.checkout-button:hover {
+    background-color: #388E3C;
+    box-shadow: 0 3px 0 #2E7D32, 0 6px 10px rgba(0,0,0,0.1);
+    top: 2px;
+}
+
+/* Footer */
+footer {
+    background-color: #ff9800;
+    color: white;
+    padding-top: 3rem;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,149.3C960,160,1056,160,1152,138.7C1248,117,1344,75,1392,53.3L1440,32L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path></svg>');
+    background-size: cover;
+    background-position: center;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 0 5% 3rem;
+}
+
+.footer-logo h2 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+    font-family: 'Fredoka One', cursive;
+    font-size: 2rem;
+    text-shadow: 2px 2px 0 #e65100;
+}
+
+.footer-logo p {
+    font-weight: bold;
+}
+
+.footer-links h3,
+.footer-contact h3 {
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-family: 'Fredoka One', cursive;
+    text-shadow: 1px 1px 0 #e65100;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.footer-links ul li a {
+    transition: all 0.3s;
+    position: relative;
+    padding-left: 15px;
+}
+
+.footer-links ul li a::before {
+    content: '🦖';
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+.footer-links ul li a:hover {
+    color: #fff;
+    padding-left: 25px;
+}
+
+.footer-links ul li a:hover::before {
+    opacity: 1;
+}
+
+.footer-contact p {
+    margin-bottom: 0.8rem;
+    font-weight: bold;
+}
+
+.footer-bottom {
+    background-color: #e65100;
+    padding: 1.5rem 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Notification */
+.notification {
+    position: fixed;
+    bottom: -100px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #4CAF50;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1001;
+    transition: bottom 0.3s ease-in-out;
+    font-family: 'Fredoka One', cursive;
+    font-size: 1.1rem;
+    border: 3px solid white;
+}
+
+.notification.show {
+    bottom: 20px;
+}
+
+/* Dinosaur Footprints */
+.dino-footprints {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    bottom: 0;
+    left: 0;
+    background-image: url('data:image/svg+xml;utf8,<svg width="60" height="30" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg"><path d="M10,10 C12,5 15,5 15,10 C15,15 10,20 5,15 C0,10 5,5 10,10 Z" fill="%23e65100" opacity="0.3" transform="rotate(30)"/></svg>');
+    background-repeat: repeat-x;
+    background-size: 60px 30px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    .logo {
+        margin-bottom: 1rem;
+    }
+    
+    nav ul {
+        gap: 1rem;
+    }
+    
+    .hero {
+        height: 60vh;
+    }
+    
+    .hero h2 {
+        font-size: 2rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero p {
+        font-size: 1rem;
+    }
+    
+    .product-grid {
+        grid-template-columns: 1fr
