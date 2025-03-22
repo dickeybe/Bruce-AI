@@ -1,0 +1,3 @@
+API Keys LLMs
+OpenAI - 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
+CohereKey - Hw99Uix6skCQsFtF2cCqi9Ro6bU1uDQGH5pC6JxO

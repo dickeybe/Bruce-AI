@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DinoToys - Premium Toy Dinosaurs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>DinoToys</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="cart-icon">
+            <span class="material-icons">shopping_cart</span>
+            <span class="cart-count">0</span>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h2>Prehistoric Friends for Modern Adventures</h2>
+            <p>High-quality, educational toy dinosaurs for curious minds of all ages</p>
+            <button class="cta-button">Shop Now</button>
+        </div>
+    </section>
+
+    <section class="products" id="products">
+        <h2>Our Dinosaur Collection</h2>
+        <div class="product-grid">
+            <div class="product-card" data-id="1">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200?text=T-Rex" alt="T-Rex Toy">
+                </div>
+                <div class="product-info">
+                    <h3>Tyrannosaurus Rex</h3>
+                    <p class="product-description">Fearsome predator with tiny arms but mighty jaws!</p>
+                    <p class="product-price">$24.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="2">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200?text=Triceratops" alt="Triceratops Toy">
+                </div>
+                <div class="product-info">
+                    <h3>Triceratops</h3>
+                    <p class="product-description">Three-horned herbivore with a protective frill.</p>
+                    <p class="product-price">$19.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="3">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200?text=Velociraptor" alt="Velociraptor Toy">
+                </div>
+                <div class="product-info">
+                    <h3>Velociraptor</h3>
+                    <p class="product-description">Swift and intelligent pack hunter with sharp claws.</p>
+                    <p class="product-price">$18.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="4">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200?text=Stegosaurus" alt="Stegosaurus Toy">
+                </div>
+                <div class="product-info">
+                    <h3>Stegosaurus</h3>
+                    <p class="product-description">Distinctive plates along its back and spiked tail.</p>
+                    <p class="product-price">$21.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="5">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200?text=Brachiosaurus" alt="Brachiosaurus Toy">
+                </div>
+                <div class="product-info">
+                    <h3>Brachiosaurus</h3>
+                    <p class="product-description">Gentle giant with a long neck for reaching tall trees.</p>
+                    <p class="product-price">$27.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+
+            <div class="product-card" data-id="6">
+                <div class="product-image">
+                    <img src="https://via.placeholder.com/300x200?text=Pteranodon" alt="Pteranodon Toy">
+                </div>
+                <div class="product-info">
+                    <h3>Pteranodon</h3>
+                    <p class="product-description">Flying reptile with a wingspan of over 20 feet!</p>
+                    <p class="product-price">$22.99</p>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About DinoToys</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>DinoToys is dedicated to creating scientifically accurate, educational, and fun dinosaur toys for children and collectors alike. Our team of paleontologists and toy designers work together to ensure each model captures the essence of these magnificent prehistoric creatures.</p>
+                <p>All our toys are made from non-toxic, durable materials that are safe for children and kind to the environment.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Shopping Cart</h3>
+                <span class="close-cart">&times;</span>
+            </div>
+            <div class="cart-items">
+                <!-- Cart items will be added here dynamically -->
+            </div>
+            <div class="cart-total">
+                <p>Total: <span id="cart-total-price">$0.00</span></p>
+            </div>
+            <button class="checkout-button">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h2>DinoToys</h2>
+                <p>Prehistoric Friends for Modern Adventures</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: info@dinotoys.com</p>
+                <p>Phone: (555) 123-4567</p>
+                <p>Address: 123 Jurassic Lane, Prehistoric Park, PP 12345</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 DinoToys. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
