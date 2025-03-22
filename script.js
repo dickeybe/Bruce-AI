@@ -14,12 +14,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Product data
     const products = [
-        { id: 1, name: 'Tyrannosaurus Rex', price: 24.99, image: 'https://via.placeholder.com/300x200?text=T-Rex' },
-        { id: 2, name: 'Triceratops', price: 19.99, image: 'https://via.placeholder.com/300x200?text=Triceratops' },
-        { id: 3, name: 'Velociraptor', price: 18.99, image: 'https://via.placeholder.com/300x200?text=Velociraptor' },
-        { id: 4, name: 'Stegosaurus', price: 21.99, image: 'https://via.placeholder.com/300x200?text=Stegosaurus' },
-        { id: 5, name: 'Brachiosaurus', price: 27.99, image: 'https://via.placeholder.com/300x200?text=Brachiosaurus' },
-        { id: 6, name: 'Pteranodon', price: 22.99, image: 'https://via.placeholder.com/300x200?text=Pteranodon' }
+        { id: 1, name: 'Tyrannosaurus Rex', price: 24.99, image: 'images/T-Rex.png' },
+        { id: 2, name: 'Triceratops', price: 19.99, image: 'images/Triceratops.png' },
+        { id: 3, name: 'Velociraptor', price: 18.99, image: 'images/Velociraptor.png' },
+        { id: 4, name: 'Stegosaurus', price: 21.99, image: 'images/Stegosaurus.png' },
+        { id: 5, name: 'Brachiosaurus', price: 27.99, image: 'images/Brachiosaurus.png' },
+        { id: 6, name: 'Pteranodon', price: 22.99, image: 'images/Pteranodon.png' }
     ];
     
     // Cart array to store items
